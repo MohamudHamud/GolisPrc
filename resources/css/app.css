@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the full viewport height */
+}
+
+.content {
+    flex: 1; /* Pushes the footer down */
+}
+
+.footer {
+    margin-top: 20px; /* Adds space between content and footer */
+    padding: 15px 0;
+    background-color: #f8f9fa; /* Light background for visibility */
+    text-align: center;
+}
