@@ -12,10 +12,10 @@
 </style>
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>Qabaal Software Development Company</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Test</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-    Designed by <a href="https://qabaal.com/">qabaal Software Development</a> © <span id="year"></span>
+    Designed by <a href="#">Test </a> © <span id="year"></span>
 </div>
 
 <script>

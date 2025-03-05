@@ -5,18 +5,11 @@
     @php
       $permissions = [
           'dashboard' => App\Models\PermissionRoleModel::getPermission('Dashboard', Auth::user()->role_id),
-          'academic' => App\Models\PermissionRoleModel::getPermission('Accademic_info', Auth::user()->role_id),
-          'Departments' => App\Models\PermissionRoleModel::getPermission('Departments', Auth::user()->role_id),
-          'semester' => App\Models\PermissionRoleModel::getPermission('Semester', Auth::user()->role_id),
-          'subjects' => App\Models\PermissionRoleModel::getPermission('Subject', Auth::user()->role_id),
-          'students' => App\Models\PermissionRoleModel::getPermission('Student', Auth::user()->role_id),
-          'attendance' => App\Models\PermissionRoleModel::getPermission('Attendence', Auth::user()->role_id),
           'users' => App\Models\PermissionRoleModel::getPermission('user', Auth::user()->role_id),
           'roles' => App\Models\PermissionRoleModel::getPermission('Roles', Auth::user()->role_id),
           'settings' => App\Models\PermissionRoleModel::getPermission('Setting', Auth::user()->role_id),
-          'projects'=>App\Models\PermissionRoleModel::getPermission('projects', Auth::user()->role_id),
-          'ViewAttendence'=>App\Models\PermissionRoleModel::getPermission('ViewAttendence', Auth::user()->role_id),
-          'portal'=>App\Models\PermissionRoleModel::getPermission('portal', Auth::user()->role_id),
+          'products'=>App\Models\PermissionRoleModel::getPermission('products', Auth::user()->role_id),
+          'customers'=>App\Models\PermissionRoleModel::getPermission('customers', Auth::user()->role_id),
       ];
     @endphp
 
@@ -41,10 +34,6 @@
     @endif
 
   
-
-  
-
-
 
 
     <!-- Users -->
@@ -79,32 +68,27 @@
 
   
      <!-- Settings -->
-     @if (!empty($permissions['projects']))
+     @if (!empty($permissions['products']))
      <li class="nav-item">
-      <a href="{{ url('/projects') }}" class="nav-link">
+      <a href="{{ url('/products') }}" class="nav-link">
         <i class="bi bi-person"></i>
-        <span>Systems Reg</span>
+        <span>products</span>
       </a>
     </li>
     @endif
 
 
 
-    <!-- Register -->
+    @if (!empty($permissions['customers']))
     <li class="nav-item">
-      <a href="/visitors" class="nav-link">
+      <a href="/customers" class="nav-link">
         <i class="bi bi-card-list"></i>
-        <span>visitos</span>
+        <span>Customer</span>
       </a>
     </li>
+    @endif
 
-    <!-- Login -->
-    <li class="nav-item">
-      <a href="pages-login.html" class="nav-link">
-        <i class="bi bi-box-arrow-in-right"></i>
-        <span>Login</span>
-      </a>
-    </li>
+    
   </ul>
 </aside>
 <!-- End Sidebar -->

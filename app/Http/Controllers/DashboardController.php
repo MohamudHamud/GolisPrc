@@ -1,40 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-// app/Http/Controllers/DashboardController.php
-namespace App\Http\Controllers;
+
+use App\Models\Customer;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB; 
-
-
-use App\Models\ProjectTable;
 use App\Models\RequestForm;
-
+use App\Models\User;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $projects = ProjectTable::all();
-        $visitor = RequestForm::all();
-        // Count total projects
-        $totalProjects = ProjectTable::count();
-        $visitors = RequestForm::count();
-        $mostVisitedPlaces = DB::table('request_forms')
-            ->select('city', DB::raw('count(*) as visits'))
-            ->groupBy('city')
-            ->orderByDesc('visits')
-            ->get();
+        // Get counts for each model
+        $totalProducts = Product::count();
+        $totalUsers = User::count(); // Change from RequestForm to User for total users
+        $totalCustomers = Customer::count(); // Add count for customers
 
-        // Calculate total visits
-        $totalVisits = $mostVisitedPlaces->sum('visits');
-
-        // Add percentage calculation
-        $mostVisitedPlaces = $mostVisitedPlaces->map(function ($place) use ($totalVisits) {
-            $place->percentage = $totalVisits > 0 ? round(($place->visits / $totalVisits) * 100, 2) : 0;
-            return $place;
-        });
-    
-        return view('dashboard',compact('totalProjects','visitors','mostVisitedPlaces'));
+        // Return view with the necessary data
+        return view('dashboard', compact('totalProducts', 'totalUsers', 'totalCustomers'));
     }
 }
-

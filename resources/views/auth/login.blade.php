@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> Qabaal - Login</title>
+  <title> Test Golis  - Login</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/assets/img/logo.png" rel="icon">
-  <link href="/assets/img/logo.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -32,7 +31,7 @@
   <!-- Custom Styles -->
   <style>
     body {
-      background: url("/assets/img/loginpic5.avif") no-repeat center center fixed;
+      background: url("/") no-repeat center center fixed;
       background-size: cover;
     }
 
@@ -55,8 +54,8 @@
 
             <div class="d-flex justify-content-center py-4">
               <a href="/" class="logo d-flex align-items-center w-auto">
-                <img src="/assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block"> QABAAL  </span>
+              
+                <span class="d-none d-lg-block"> Test - Golis  </span>
               </a>
             </div><!-- End Logo -->
 
@@ -79,7 +78,7 @@
                   <p class="text-center small">Enter your Email & password to login</p>
                 </div>
 
-                <form action="/Auth" method="POST" class="row g-3 needs-validation">
+                <form action="/" method="POST" class="row g-3 needs-validation">
                   @csrf
                   <div class="col-12">
                     <label for="yourEmail" class="form-label">Email</label>
@@ -113,7 +112,7 @@
             </div>
 
             <div class="credits">
-    Designed by <a href="https://qabaal.com/">qabaal Software Development</a> © <span id="year"></span>
+    Designed by <a href="0#">Hamud Software Development</a> © <span id="year"></span>
 </div>
 
 <script>

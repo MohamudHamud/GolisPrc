@@ -3,8 +3,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{ url('/dashboard') }}" class="logo d-flex align-items-center">
-        <img src="/assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block"> Qabaal Software</span>
+        
+        <span class="d-none d-lg-block"> Test Software</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -30,7 +30,6 @@
               @auth
           <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <img src="/assets/img/logo.png" alt="Profile" class="rounded-circle">
               <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
             </a><!-- End Profile Image Icon -->
 
